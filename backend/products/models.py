@@ -6,7 +6,7 @@ import uuid
 # easier configuration during installation for new users.
 class Category(models.Model):
     category_name = models.CharField(max_length=50)
-    parent_category = models.ForeignKey('self', on_delete=models.PROTECT)
+    parent_category = models.ForeignKey('self', on_delete=models.PROTECT, null=True)
 
 # A individual product - this allows information to be stored on the product itself independent of
 # each individual listing of the product.
